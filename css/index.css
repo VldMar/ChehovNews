@@ -354,7 +354,7 @@ body{
     }
 
     .main__content .item .img{
-        width: 95%;
+        width: 100%;
         flex: 0 0 200px;
     }
 
