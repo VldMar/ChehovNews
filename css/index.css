@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
 /* Reset and base styles  */
 * {
 	padding: 0px;
@@ -80,8 +81,6 @@ input::-ms-clear {
 button, input[type="submit"] {
     display: inline-block;
     box-shadow: none;
-    background-color: transparent;
-    background: none;
     cursor: pointer;
 }
 
@@ -104,7 +103,7 @@ legend {
 }
 
 body{
-    font-family: 'Calibri';
+    font-family: 'Open Sans', sans-serif;
     font-size: 17px;
 }
 
@@ -154,8 +153,15 @@ body{
     height: 100%;
     background-color: rgba(255, 255, 255, 0.9);
 }
+
+.title{
+    font-size: 1.6em;
+    font-weight: 800;
+    text-align: center;
+}
+
 .site-title{
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 .header__title{
     font-size: 2.2em;
@@ -164,7 +170,6 @@ body{
 }
 
 .header__subtitle{   
-    font-size: 1.5em;
     font-weight: 800;
     margin-top: 40px;
 }
@@ -174,11 +179,6 @@ body{
     margin-top: 25px;
 }
 
-.header__form{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-}
 
 .btn{
     border-radius: 12px;
@@ -193,43 +193,59 @@ body{
 }
 
 .header__form{
-    margin-bottom: 55px;
+    margin-top: 30px;  
+    margin-bottom: 55px; 
 }
 
-.header__form .inputs
+.form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.form .inputs
 {
     display: flex;
-    justify-content: space-between;
-    flex: 0 0 48%;
+    justify-content: center;
+    
 }
 
-.input{
-    border: 1px solid gray;
+.form .input{
+    border: 1px solid #aaaaaa;
     border-radius: 12px;
     background-color: white;
     padding: 15px 20px;
-    width: 315px;
+}
+
+.form .input.fio,
+.form .input.tel{
+    width: 315px;    
     margin-right: 15px;
 }
 
-.input[placeholder]
+.form .input.wide{
+    width: 100%;
+}
+
+.form .input[placeholder]
 {
     font-size: 17px;
 }
 
-
-.header__form .submit{
+.form .submit{
     margin: 20px auto;
+}
+
+.form .login-submit
+{
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 /* Main content */
 .main{
     padding: 50px 0;;
-}
-.main__title{
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
 }
 .main__content{
     margin: 50px auto;
@@ -272,11 +288,6 @@ body{
     font-weight: bold;
 }
 
-.pagination a:active, .pagination a:hover{
-  
-}
-
-
 .footer{
     background-color: #f3f3f3;
     padding: 25px 0;
@@ -305,20 +316,99 @@ body{
 }
 
 .footer .terms-of-use{
-    font-weight: bold;
+    font-weight: 700;
     font-size: 14px;
 }
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #f3f3f3;
+
+}
+
+
+.calculator{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f3f3;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.calculator .login-name
+{
+    font-size: 1em;
+    text-decoration: underline;
+    text-align: right;
+    margin-bottom: 60px;
+    font-weight: bold;
+
+}
+
+.calculator .form{
+    align-items: center;
+    margin: 40px 0;
+}
+
+.calculator__input{
+    width: 410px;
+    max-width: 100%;
+}
+
+.calculator__inner{
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+}
+
+.calculator__buttons{
+    width: 260px;
+    margin: 20px auto 0 auto;
+    /*display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.calculator__buttons .btn{
+    width: 75px;
+    height: 75px;
+    padding: 18px;
+    font-size: 1.7em;
+    background: linear-gradient(to bottom, #fff,40%, #e6e6e6);
+    color: black;
+    border: 1px solid #d7d7d7;
+}
+
+.calculator__buttons .btn:hover{
+    background: #e6e6e6;
+}
+
+.calculator__buttons .plus{
+    margin-left: auto;
+}
+
+.calculator__buttons .clear{
+    margin-right: auto;
+}
+
 
 
 @media (max-width: 768px)
 {
-    .header__form{
+    .form{
         width: 100%;
     }
 
-    .header__form .input{
-        width: 48%;
-    }
 }
 
 @media (max-width: 576px)
@@ -335,13 +425,14 @@ body{
         margin-bottom: 35px;
     }
 
-    .header__form .inputs{
+    .form .inputs{
         flex-direction: column;
     }
 
-    .header__form .input{
-        width: 98%;
+    .form .input.fio,
+    .form .input.tel{
         margin-bottom: 10px;
+        width: 100%;
     }
 
     .main__content{
@@ -366,4 +457,12 @@ body{
         margin-top: 10px;
     }
 
+    
+    .calculator{
+        padding-top: 20px;
+    }
+
+    .calculator .login-name{
+        margin-bottom: 30px;
+    }
 }
